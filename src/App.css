@@ -1,2 +1,9 @@
-/* .App {
-} */
+.App {
+  background-color: rgba(0, 121, 191, 1);
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}

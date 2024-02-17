@@ -1,9 +1,16 @@
 import React from "react";
+import cl from "./Taskblock.module.css";
 
-const Taskblock = (blockName) => {
+const Taskblock = (props) => {
   return (
-    <div className="taskBlock">
-      <h3>{blockName}</h3>
+    <div className={cl.taskBlock}>
+      <h3>{props.blockName}</h3>
+      <div className={cl.taskItems}>
+        <p className={cl.taskItem}>Lorem ipsum dolor sit amet</p>
+        <p className={cl.taskItem}>Lorem ipsum dolor sit amet</p>
+        <p className={cl.taskItem}>Lorem ipsum dolor sit amet</p>
+      </div>
+      <button className={cl.addTaskButton}>+Add card</button>
     </div>
   );
 };

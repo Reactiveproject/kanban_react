@@ -1,0 +1,35 @@
+.taskBlock {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+  padding: 12px;
+  max-width: 282px;
+  background-color: rgba(235, 236, 240, 1);
+  border-radius: 10px;
+  margin: 12px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.taskItems {
+  margin-top: 15px;
+}
+
+.taskItem {
+  font-size: 18px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* .taskItem > :first-child {
+  margin-top: 15px;
+} */
+.addTaskButton {
+  display: inline;
+}
