@@ -1,0 +1,24 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  background-color: rgba(0, 103, 163, 1);
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 17px;
+}
+.tasksModule {
+  display: flex;
+}
+
+.tasksModule > :first-child {
+  margin-right: 36px;
+}
+
+.kanbanAuthInfo {
+  display: flex;
+  justify-content: space-between;
+}
