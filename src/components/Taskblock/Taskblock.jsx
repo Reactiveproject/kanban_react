@@ -1,26 +1,62 @@
 import React, { useState } from "react";
 import cl from "./Taskblock.module.css";
 
-const Taskblock = (props) => {
+const Taskblock = ({ blockName, ...props }) => {
   const [taskArray, setTaskArray] = useState([
-    { id: 1, description: "task one" },
-    { id: 2, description: "task two" },
-    { id: 3, description: "task three" },
+    { id: 1, status: "Backlog", name: "task one", description: "task one" },
+    { id: 2, status: "Ready", name: "task two", description: "task two" },
+    {
+      id: 3,
+      status: "In Progress",
+      name: "task three",
+      description: "task three",
+    },
+    {
+      id: 4,
+      status: "Backlog",
+      name: "task four",
+      description: "task three",
+    },
   ]);
+
+  const [task, setTask] = useState("");
+
+  const addNewTask = (e) => {
+    e.preventDefault();
+    const newTask = {
+      id: Date.now(),
+      status: blockName,
+      name: task,
+    };
+    setTaskArray([...taskArray, newTask]);
+    console.log(taskArray);
+    setTask("");
+  };
 
   return (
     <div className={cl.taskBlock}>
-      <h3>{props.blockName}</h3>
+      <h3>{blockName}</h3>
       <div className={cl.taskItems}>
         {taskArray.map((task) => {
-          return (
-            <p key={task.id} className={cl.taskItem}>
-              {task.description}
-            </p>
-          );
+          if (task.status === blockName)
+            return (
+              <p key={task.id} className={cl.taskItem}>
+                {task.name}
+              </p>
+            );
         })}
+        <form>
+          <input
+            type="text"
+            className={cl.taskItem}
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+          />
+          <button className={cl.addTaskButton} onClick={addNewTask}>
+            Submit
+          </button>
+        </form>
       </div>
-      <button className={cl.addTaskButton}>+Add card</button>
     </div>
   );
 };
