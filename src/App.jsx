@@ -6,27 +6,47 @@ import Header from "./components/Header/Header";
 import Taskblock from "./components/Taskblock/Taskblock";
 
 function App() {
-  const dataMock = [
+  const [taskArray, setTaskArray] = useState([
+    { id: 1, status: "Backlog", name: "task one", description: "task one" },
+    { id: 2, status: "Ready", name: "task two", description: "task two" },
     {
-      title: "backlog",
-      issues: [
-        {
-          id: "12345",
-          name: "Sprint bugfix",
-          description: "Fix all the bugs",
-        },
-      ],
+      id: 3,
+      status: "In Progress",
+      name: "task three",
+      description: "task three",
     },
-  ];
+    {
+      id: 4,
+      status: "Backlog",
+      name: "task four",
+      description: "task three",
+    },
+  ]);
 
   return (
     <div className="App">
       <Header />
       <main>
-        <Taskblock blockName="Backlog" />
-        <Taskblock blockName="Ready" />
-        <Taskblock blockName="In Progress" />
-        <Taskblock blockName="Finished" />
+        <Taskblock
+          blockName="Backlog"
+          taskArray={taskArray}
+          setTaskArray={setTaskArray}
+        />
+        <Taskblock
+          blockName="Ready"
+          taskArray={taskArray}
+          setTaskArray={setTaskArray}
+        />
+        <Taskblock
+          blockName="In Progress"
+          taskArray={taskArray}
+          setTaskArray={setTaskArray}
+        />
+        <Taskblock
+          blockName="Finished"
+          taskArray={taskArray}
+          setTaskArray={setTaskArray}
+        />
       </main>
       <Footer activeCount="10" finishedCount="19" />
     </div>
