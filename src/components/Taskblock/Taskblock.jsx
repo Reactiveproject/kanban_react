@@ -23,20 +23,17 @@ const Taskblock = ({
       name: task,
     };
     setTaskArray([...taskArray, newTask]);
-    console.log(taskArray);
     setTask("");
   };
 
-  const chooseTask = (task) => {
-    setSelectedTask(task);
-    console.log(task);
+  const changeTaskStatus = (e) => {
+    e.preventDefault();
+    const newTasksArray = taskArray.map((task) => {
+      if (task.name === selectedTask) return { ...task, status: blockName };
+      return task;
+    });
+    setTaskArray(newTasksArray);
   };
-
-  // const addExistingTask = (e, selectedTask) => {
-  //   e.preventDefault();
-  //   console.log(selectedTask);
-  //   setTask("");
-  // };
 
   return (
     <div className={cl.taskBlock}>
@@ -67,12 +64,14 @@ const Taskblock = ({
             <div>
               <MySelect
                 value={selectedTask}
-                onChange={chooseTask}
+                onChange={(task) => setSelectedTask(task)}
                 defaultValue="Choose task"
                 dataArray={taskArray}
                 blockName={blockName}
               />
-              <button className={cl.addTaskButton}>Submit 2</button>
+              <button className={cl.addTaskButton} onClick={changeTaskStatus}>
+                Submit 2
+              </button>
             </div>
           )}
         </form>

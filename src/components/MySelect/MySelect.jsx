@@ -11,7 +11,7 @@ const MySelect = ({ defaultValue, dataArray, onChange, value, blockName }) => {
     <select value={value} onChange={(event) => onChange(event.target.value)}>
       <option disabled>{defaultValue}</option>
 
-      {filterArray.map((data, index, bloks) => {
+      {filterArray.map((data) => {
         return (
           <option value={data.name} key={data.id}>
             {data.name}
