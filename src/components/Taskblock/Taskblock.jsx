@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import cl from "./Taskblock.module.css";
 import MyButton from "../MyButton/MyButton";
 import MySelect from "../MySelect/MySelect";
+import { bloks } from "../../data";
 
-const Taskblock = ({ blockName, taskArray, setTaskArray, ...props }) => {
+const Taskblock = ({
+  blockName,
+  filterdTaskArray,
+  taskArray,
+  setTaskArray,
+}) => {
   const [task, setTask] = useState("");
 
-  const [selectedTask, setSelectedTask] = useState("");
+  const [selectedTask, setSelectedTask] = useState("Choose task");
 
-  const addNewTask = (e) => {
+  const addNewTask = (e, title) => {
     e.preventDefault();
     const newTask = {
+      description: task,
       id: Date.now(),
       status: blockName,
       name: task,
@@ -20,24 +27,22 @@ const Taskblock = ({ blockName, taskArray, setTaskArray, ...props }) => {
     setTask("");
   };
 
-  const addExistingTask = (e) => {
-    e.preventDefault();
-
-    const newTask = {
-      id: Date.now(),
-      status: blockName,
-      name: task,
-    };
-    setTaskArray([...taskArray, newTask]);
-    console.log(taskArray);
-    setTask("");
+  const chooseTask = (task) => {
+    setSelectedTask(task);
+    console.log(task);
   };
+
+  // const addExistingTask = (e, selectedTask) => {
+  //   e.preventDefault();
+  //   console.log(selectedTask);
+  //   setTask("");
+  // };
 
   return (
     <div className={cl.taskBlock}>
       <h3>{blockName}</h3>
       <div className={cl.taskItems}>
-        {taskArray.map((task) => {
+        {filterdTaskArray.map((task) => {
           if (task.status === blockName)
             return (
               <p key={task.id} className={cl.taskItem}>
@@ -47,7 +52,7 @@ const Taskblock = ({ blockName, taskArray, setTaskArray, ...props }) => {
         })}
         <form>
           {blockName === "Backlog" ? (
-            <>
+            <div>
               <input
                 type="text"
                 className={cl.taskItem}
@@ -57,19 +62,18 @@ const Taskblock = ({ blockName, taskArray, setTaskArray, ...props }) => {
               <button className={cl.addTaskButton} onClick={addNewTask}>
                 Submit
               </button>
-            </>
+            </div>
           ) : (
-            <>
+            <div>
               <MySelect
                 value={selectedTask}
-                onChange={(task) => setSelectedTask(task)}
+                onChange={chooseTask}
                 defaultValue="Choose task"
                 dataArray={taskArray}
+                blockName={blockName}
               />
-              <button className={cl.addTaskButton} onClick={addExistingTask}>
-                Submit 2
-              </button>
-            </>
+              <button className={cl.addTaskButton}>Submit 2</button>
+            </div>
           )}
         </form>
       </div>
