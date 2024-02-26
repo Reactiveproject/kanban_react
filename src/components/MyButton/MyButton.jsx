@@ -1,9 +1,9 @@
-import React, { Children } from "react";
+import React from "react";
 import cl from "./MyButton.module.css";
 
-const MyButton = ({ onClick, value, ...props }) => {
+const MyButton = ({ onClick, value, status }) => {
   return (
-    <button className={cl.submitButton} onClick={onClick}>
+    <button disabled={status} onClick={onClick} className={cl.submitButton}>
       {value}
     </button>
   );

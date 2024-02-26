@@ -8,8 +8,9 @@ const MyForm = ({ blockName, taskArray, setTaskArray, showForm }) => {
   const [task, setTask] = useState("");
   const [selectedTask, setSelectedTask] = useState("Choose task");
 
-  const addNewTask = (e, title) => {
+  const addNewTask = (e) => {
     e.preventDefault();
+    console.log("hi");
     const newTask = {
       description: task,
       id: Date.now(),
@@ -34,21 +35,23 @@ const MyForm = ({ blockName, taskArray, setTaskArray, showForm }) => {
   return (
     <form className={cl.form}>
       {blockName === "Backlog" ? (
-        <div>
+        <div className={cl.inputBlock}>
           <input
             type="text"
             className={cl.taskItem}
             value={task}
-            onChange={(e) => setTask(e.target.value)}
+            onChange={(e) => {
+              setTask(e.target.value);
+            }}
           />
-          <MyButton onClick={addNewTask} value="Submit" />
+          <MyButton status={!task} onClick={addNewTask} value="Submit" />
         </div>
       ) : (
-        <div>
+        <div className={cl.inputBlock}>
           <MySelect
             value={selectedTask}
             onChange={(task) => setSelectedTask(task)}
-            defaultValue="Choose task"
+            defaultValue={null}
             dataArray={taskArray}
             blockName={blockName}
           />

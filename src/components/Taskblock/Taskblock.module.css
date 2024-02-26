@@ -35,8 +35,17 @@ h3 {
   padding: 8px;
   border-radius: 5px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
-/* .taskItem > :first-child {
-  margin-top: 15px;
-} */
+.addCartButton {
+  border: none;
+  color: rgba(94, 108, 132, 1);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.addCartButton:hover {
+  background-color: white;
+  cursor: pointer;
+}

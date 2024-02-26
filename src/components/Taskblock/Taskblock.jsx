@@ -14,12 +14,16 @@ const Taskblock = ({ blockName, filterdTaskArray, ...props }) => {
       <h3>{blockName}</h3>
       <div className={cl.taskItems}>
         {filterdTaskArray.map((task) => {
-          if (task.status === blockName)
-            return (
-              <p key={task.id} className={cl.taskItem}>
-                {task.name}
-              </p>
-            );
+          return (
+            <div
+              key={task.id}
+              onClick={() => {
+                console.log("hello");
+              }}
+            >
+              <p className={cl.taskItem}>{task.name}</p>
+            </div>
+          );
         })}
         {active ? (
           <button className={cl.addCartButton} onClick={showForm}>

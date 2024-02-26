@@ -1,7 +1,20 @@
-/* .form {
-  display: none;
+.taskItem {
+  border: none;
+  font-size: 18px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
-.active {
-  display: block;
-} */
+.inputBlock {
+}
+
+.selectBlock {
+  border: none;
+  font-size: 18px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}

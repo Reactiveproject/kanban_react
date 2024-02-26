@@ -1,4 +1,12 @@
 .submitButton {
-  display: inline;
-  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 121, 191, 1);
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.disabled {
+  color: gray;
+  background-color: rgb(92, 151, 185);
 }

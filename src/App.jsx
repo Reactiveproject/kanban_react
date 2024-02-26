@@ -8,6 +8,10 @@ import { bloks, tasks } from "./data";
 
 function App() {
   const [taskArray, setTaskArray] = useState(tasks);
+  const [activeTasks, setActiveTasks] = useState();
+  const [finishedTasks, setFinishedTasks] = useState();
+
+  console.log(taskArray.length);
 
   return (
     <div className="App">
@@ -24,11 +28,13 @@ function App() {
               filterdTaskArray={filtredTaskArray}
               taskArray={taskArray}
               setTaskArray={setTaskArray}
+              // activeTasks={activeTasks}
+              // finishedTasks={finishedTasks}
             />
           );
         })}
       </main>
-      <Footer activeCount="10" finishedCount="19" />
+      <Footer activeCount={activeTasks} finishedCount={finishedTasks} />
     </div>
   );
 }

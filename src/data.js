@@ -2,7 +2,7 @@ const bloks = ["Backlog", "Ready", "In Progress", "Finished"];
 
 const tasks = [
   { id: 1, status: "Backlog", name: "task one", description: "task one" },
-  { id: 2, status: "Ready", name: "task two", description: "task two" },
+  { id: 2, status: "Backlog", name: "task two", description: "task two" },
   {
     id: 3,
     status: "In Progress",

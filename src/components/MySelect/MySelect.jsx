@@ -1,5 +1,6 @@
 import React from "react";
 import { bloks } from "../../data";
+import cl from "./MySelect.module.css";
 
 const MySelect = ({ defaultValue, dataArray, onChange, value, blockName }) => {
   const index = bloks.indexOf(blockName);
@@ -8,12 +9,16 @@ const MySelect = ({ defaultValue, dataArray, onChange, value, blockName }) => {
   const filterArray = dataArray.filter((task) => task.status === selectStatus);
 
   return (
-    <select value={value} onChange={(event) => onChange(event.target.value)}>
-      <option disabled>{defaultValue}</option>
+    <select
+      className={cl.select}
+      value={value}
+      onChange={(event) => onChange(event.target.value)}
+    >
+      <option className={cl.option}>{defaultValue}</option>
 
       {filterArray.map((data) => {
         return (
-          <option value={data.name} key={data.id}>
+          <option className={cl.option} value={data.name} key={data.id}>
             {data.name}
           </option>
         );
