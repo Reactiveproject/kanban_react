@@ -1,12 +1,4 @@
 .App {
-  background-color: rgba(0, 121, 191, 1);
-  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
-}
-
-main {
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
 }

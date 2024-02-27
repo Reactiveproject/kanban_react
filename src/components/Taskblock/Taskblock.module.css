@@ -49,3 +49,8 @@ h3 {
   background-color: white;
   cursor: pointer;
 }
+
+.taskLink {
+  text-decoration: none;
+  color: black;
+}

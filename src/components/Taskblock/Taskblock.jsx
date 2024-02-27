@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import cl from "./Taskblock.module.css";
 import MyForm from "../MyForm/MyForm";
+import { Link } from "react-router-dom";
 
 const Taskblock = ({ blockName, filterdTaskArray, ...props }) => {
   const [active, setActive] = useState("true");
@@ -15,14 +16,13 @@ const Taskblock = ({ blockName, filterdTaskArray, ...props }) => {
       <div className={cl.taskItems}>
         {filterdTaskArray.map((task) => {
           return (
-            <div
+            <Link
               key={task.id}
-              onClick={() => {
-                console.log("hello");
-              }}
+              to={`/tasks/${task.id}`}
+              className={cl.taskLink}
             >
               <p className={cl.taskItem}>{task.name}</p>
-            </div>
+            </Link>
           );
         })}
         {active ? (

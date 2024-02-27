@@ -1,0 +1,22 @@
+.taskItem {
+  margin: 28px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 23px 23px 35px 23px;
+}
+
+.taskDescription {
+  font-size: 18px;
+  max-width: 621px;
+  margin-left: 23px;
+}

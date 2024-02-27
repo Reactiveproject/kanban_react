@@ -51,11 +51,15 @@ const MyForm = ({ blockName, taskArray, setTaskArray, showForm }) => {
           <MySelect
             value={selectedTask}
             onChange={(task) => setSelectedTask(task)}
-            defaultValue={null}
+            defaultValue={""}
             dataArray={taskArray}
             blockName={blockName}
           />
-          <MyButton onClick={changeTaskStatus} value="Submit" />
+          <MyButton
+            status={!selectedTask}
+            onClick={changeTaskStatus}
+            value="Submit"
+          />
         </div>
       )}
     </form>

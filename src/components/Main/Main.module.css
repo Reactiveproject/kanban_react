@@ -1,0 +1,6 @@
+.main {
+  background-color: rgba(0, 121, 191, 1);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+}
