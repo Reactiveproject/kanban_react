@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cl from "./Taskblock.module.css";
-import MyForm from "../MyForm/MyForm";
 import { Link } from "react-router-dom";
+import MyForm from "../UI/MyForm/MyForm";
 
 const Taskblock = ({ blockName, filterdTaskArray, ...props }) => {
   const [active, setActive] = useState("true");

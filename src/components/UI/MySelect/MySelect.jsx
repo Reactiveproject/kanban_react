@@ -1,6 +1,6 @@
 import React from "react";
-import { bloks } from "../../data";
 import cl from "./MySelect.module.css";
+import { bloks } from "../../../data";
 
 const MySelect = ({ defaultValue, dataArray, onChange, value, blockName }) => {
   const index = bloks.indexOf(blockName);
