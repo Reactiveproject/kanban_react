@@ -1,23 +1,21 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import { bloks, tasks } from "./data";
 import Main from "./components/Main/Main";
+import useLocalStorage from "./Hooks/useLocalStorage";
 
 function App() {
-  const [taskArray, setTaskArray] = useState(tasks);
-  const [activeTasks, setActiveTasks] = useState();
-  const [finishedTasks, setFinishedTasks] = useState();
+  const [taskArray, setTaskArray] = useLocalStorage("task", tasks);
 
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
         <Main taskArray={taskArray} setTaskArray={setTaskArray} bloks={bloks} />
-        <Footer activeCount={activeTasks} finishedCount={finishedTasks} />
+        <Footer />
       </div>
     </BrowserRouter>
   );
