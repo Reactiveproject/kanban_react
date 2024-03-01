@@ -1,0 +1,55 @@
+.loginModule {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.loginModuleLogo {
+  background-color: white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  /* display: flex; */
+}
+
+.imgLogo {
+  position: relative;
+  bottom: -3px;
+}
+
+.activeArrow {
+  transform: rotate(180deg);
+}
+
+.loginMenu {
+  width: 134px;
+  height: 60px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 47px;
+  left: -75px;
+  padding: 7px;
+}
+
+.loginListItem {
+  padding: 0;
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
+}
+
+.loginListItem:hover {
+  color: rgba(0, 121, 191, 1);
+}
+
+.loginSquareIco {
+  width: 11px;
+  height: 11px;
+  transform: rotate(45deg);
+  background-color: white;
+  position: absolute;
+  top: 43px;
+  left: 15px;
+}

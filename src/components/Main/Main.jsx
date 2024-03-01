@@ -4,7 +4,7 @@ import cl from "./Main.module.css";
 import Taskboard from "../Taskboard/Taskboard";
 import Taskitem from "../Taskitem/Taskitem";
 
-const Main = ({ taskArray, setTaskArray, bloks }) => {
+const Main = ({ taskArray, setTaskArray }) => {
   return (
     <div className={cl.main}>
       <Routes>
@@ -12,11 +12,7 @@ const Main = ({ taskArray, setTaskArray, bloks }) => {
           exact
           path="/"
           element={
-            <Taskboard
-              taskArray={taskArray}
-              setTaskArray={setTaskArray}
-              bloks={bloks}
-            />
+            <Taskboard taskArray={taskArray} setTaskArray={setTaskArray} />
           }
         />
         <Route

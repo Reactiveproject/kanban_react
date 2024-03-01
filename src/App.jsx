@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import { bloks, tasks } from "./data";
+import { tasks } from "./data";
 import Main from "./components/Main/Main";
 import useLocalStorage from "./Hooks/useLocalStorage";
 
@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
-        <Main taskArray={taskArray} setTaskArray={setTaskArray} bloks={bloks} />
+        <Main taskArray={taskArray} setTaskArray={setTaskArray} />
         <Footer />
       </div>
     </BrowserRouter>
