@@ -3,11 +3,7 @@ import cl from "./MyButton.module.css";
 
 const MyButton = ({ onClick, value, status }) => {
   return (
-    <button
-      disabled={status}
-      onClick={onClick}
-      className={[cl.submitButton, cl.disabled].join("")}
-    >
+    <button onClick={onClick} className={cl.submitButton}>
       {value}
     </button>
   );

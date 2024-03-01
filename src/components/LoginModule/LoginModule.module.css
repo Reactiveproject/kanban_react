@@ -31,6 +31,17 @@
   top: 47px;
   left: -75px;
   padding: 7px;
+  z-index: 3;
+}
+
+.loginSquareIco {
+  width: 11px;
+  height: 11px;
+  transform: rotate(45deg);
+  background-color: white;
+  position: absolute;
+  top: 43px;
+  left: 15px;
 }
 
 .loginListItem {
@@ -42,14 +53,4 @@
 
 .loginListItem:hover {
   color: rgba(0, 121, 191, 1);
-}
-
-.loginSquareIco {
-  width: 11px;
-  height: 11px;
-  transform: rotate(45deg);
-  background-color: white;
-  position: absolute;
-  top: 43px;
-  left: 15px;
 }

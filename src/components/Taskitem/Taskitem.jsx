@@ -14,7 +14,7 @@ const Taskitem = ({ taskArray }) => {
       <div className={cl.header}>
         <h2>{task.name}</h2>
         <Link to={"/"}>
-          <button>close</button>
+          <div className={cl.close}></div>
         </Link>
       </div>
       <div className={cl.taskDescription}>
