@@ -1,6 +1,9 @@
 .main {
-  background-color: rgba(0, 121, 191, 1);
+  align-self: stretch;
   font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
+  overflow: auto;
+  background-color: rgba(0, 121, 191, 1);
+  flex-grow: 1;
 }

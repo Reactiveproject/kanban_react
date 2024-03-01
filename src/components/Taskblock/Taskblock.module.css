@@ -10,6 +10,8 @@ form {
 .taskBlock {
   display: flex;
   flex-direction: column;
+  height: fit-content;
+  overflow: auto;
   padding: 0px;
   margin: 0px;
   padding: 12px;
