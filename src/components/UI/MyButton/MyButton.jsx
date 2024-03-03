@@ -1,9 +1,9 @@
 import React from "react";
 import cl from "./MyButton.module.css";
 
-const MyButton = ({ onClick, value, status }) => {
+const MyButton = ({ onClick, value }) => {
   return (
-    <button onClick={onClick} className={cl.submitButton}>
+    <button onClick={onClick} className={cl.button}>
       {value}
     </button>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
@@ -9,7 +9,6 @@ import useLocalStorage from "./Hooks/useLocalStorage";
 
 function App() {
   const [taskArray, setTaskArray] = useLocalStorage("task", tasks);
-  const [finishedTasks, setFinishedTask] = useState(null);
 
   return (
     <BrowserRouter>

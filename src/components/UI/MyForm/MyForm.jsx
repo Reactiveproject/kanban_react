@@ -10,9 +10,8 @@ const MyForm = ({ blockName, taskArray, setTaskArray, showForm }) => {
 
   const addNewTask = (e) => {
     e.preventDefault();
-    console.log("hi");
     const newTask = {
-      description: task,
+      description: "",
       id: Date.now(),
       status: blockName,
       name: task,

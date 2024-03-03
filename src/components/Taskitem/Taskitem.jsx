@@ -1,13 +1,19 @@
 import React from "react";
 import cl from "./Taskitem.module.css";
 import { Link, useParams } from "react-router-dom";
+import MyButton from "../UI/MyButton/MyButton";
+import MyModal from "../UI/MyModal/MyModal";
+import useToggle from "../../Hooks/useToggle";
 
-const Taskitem = ({ taskArray }) => {
+const Taskitem = ({ taskArray, setTaskArray }) => {
   const { taskid } = useParams();
+  const [modal, setModal] = useToggle(false);
 
   const task = taskArray.find((task) => task.id == taskid);
 
-  console.log(task);
+  const deleteTask = () => {
+    setTaskArray(taskArray.filter((item) => item.id !== task.id));
+  };
 
   return (
     <div className={cl.taskItem}>
@@ -17,8 +23,26 @@ const Taskitem = ({ taskArray }) => {
           <div className={cl.close}></div>
         </Link>
       </div>
-      <div className={cl.taskDescription}>
-        <p>{task.description}</p>
+      <div className={cl.taskDescription}>{task.description}</div>
+      {modal && (
+        <MyModal
+          id={task.id}
+          initalValue={task.description}
+          toggleModal={setModal}
+          taskArray={taskArray}
+          setTaskArray={setTaskArray}
+        />
+      )}
+      <div className={cl.footer}>
+        <MyButton
+          value={task.description ? "Edit description" : "Add description"}
+          onClick={setModal}
+        />
+        <Link to={"/"}>
+          <MyButton value={"Delete task"} onClick={deleteTask} />
+        </Link>
+
+        {/* <MyButton value={"Delete task"} onClick={deleteTask} /> */}
       </div>
     </div>
   );

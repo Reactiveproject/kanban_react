@@ -1,8 +1,6 @@
 import cl from "./Footer.module.css";
 
 const Footer = ({ taskArray }) => {
-  console.log(taskArray.length);
-
   const finishedTasks = taskArray.filter((task) => task.status === "Finished");
   const activeTasks = taskArray.length - finishedTasks.length;
 

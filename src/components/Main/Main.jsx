@@ -17,7 +17,9 @@ const Main = ({ taskArray, setTaskArray }) => {
         />
         <Route
           path="/tasks/:taskid"
-          element={<Taskitem taskArray={taskArray} />}
+          element={
+            <Taskitem taskArray={taskArray} setTaskArray={setTaskArray} />
+          }
         />
       </Routes>
     </div>
