@@ -3,7 +3,8 @@
   background-color: rgba(0, 121, 191, 1);
   color: white;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
+  font-size: 18px;
 }
 
 .button:hover {
@@ -12,4 +13,16 @@
 .disabled {
   color: gray;
   background-color: rgb(92, 151, 185);
+}
+
+@media only screen and (min-device-width: 425px) and (max-device-width: 1024px) {
+  .button {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
+  .button {
+    font-size: 25px;
+  }
 }

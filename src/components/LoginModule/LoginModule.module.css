@@ -54,3 +54,18 @@
 .loginListItem:hover {
   color: rgba(0, 121, 191, 1);
 }
+
+@media only screen and (min-device-width: 325px) and (max-device-width: 1024px) {
+  .loginMenu {
+    width: 200px;
+    height: 80px;
+    left: -150px;
+  }
+  .loginListItem {
+    font-size: 25px;
+    text-align: center;
+  }
+  .loginListItem:first-child {
+    padding-bottom: 10px;
+  }
+}

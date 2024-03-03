@@ -34,15 +34,15 @@ const Taskitem = ({ taskArray, setTaskArray }) => {
         />
       )}
       <div className={cl.footer}>
-        <MyButton
-          value={task.description ? "Edit description" : "Add description"}
-          onClick={setModal}
-        />
+        <div className={cl.editButton}>
+          <MyButton
+            value={task.description ? "Edit description" : "Add description"}
+            onClick={setModal}
+          />
+        </div>
         <Link to={"/"}>
           <MyButton value={"Delete task"} onClick={deleteTask} />
         </Link>
-
-        {/* <MyButton value={"Delete task"} onClick={deleteTask} /> */}
       </div>
     </div>
   );

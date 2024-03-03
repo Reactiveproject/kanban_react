@@ -50,6 +50,28 @@
 .footer {
   display: inline-flex;
   justify-content: end;
-
   margin: 0 15px 15px 0;
+}
+
+.editButton {
+  margin-right: 15px;
+}
+
+@media only screen and (min-device-width: 425px) and (max-device-width: 1024px) {
+  .editButton {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
+  .editButton {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
